@@ -1,0 +1,37 @@
+
+#         print('Name ', self.name, 'Salary ', self.__salary)
+
+
+# employee1 = Employee('John', 20000)
+# # print('Salary of this employee is ', employee1.name)
+# employee1.empDetails()
+
+# parent class or base class
+class Company:
+    def __init__(self):
+        # protected member
+        self._project = "AI"
+
+# child class
+
+
+class Employee(Company):
+    def __init__(self, name):
+        self.name = name
+        Company.__init__(self)
+
+    def showDetails(self):
+        print("Employee name: ", self.name)
+        # access the protected member
+        print("Working on a project :", self._project)
+
+
+emp1 = Employee('John')
+emp1.showDetails()
+print('Project: ', emp1._project)
+
+
+# security => preventing the unauthorised access to objects
+# data hiding
+# simplifies by keeping the classes separate
+# more readable and maintainable
